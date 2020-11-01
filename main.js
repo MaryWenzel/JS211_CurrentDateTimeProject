@@ -13,13 +13,47 @@ const displayDate = () => {
   document.getElementById("display-element").innerHTML = currentDate;
 }
  
+ 
 
 // Write a JavaScript program to convert a number to a string.
+const numToString = () => {
+  let num = document.getElementById('numToString').value
+  let numString = num.toString()
+  let stringResult = document.getElementById("stringResult")
 
+  if (num.length == 0) {
+    console.log("Pretty sure you know that's not a number.")
+    stringResult.innerHTML = "Pretty sure you know that's not a number."
+  }
+  else {
+    console.log(("input (" + num + ") type is: " + typeof (numString)))
+    stringResult.innerHTML = 'The number you entered: ' + num + ', is now a string: "' + numString + '"'
+  }
+}
 
+// }
 
 // Write a JavaScript program to convert a string to the number.
+const convertToNum = () =>{
+  let str = document.getElementById('stringToNum').value
+  let numResult = document.getElementById('numResult')
+  let regex = /[+-]?\d+(?:\.\d+)?/g
+  let numArray = []
 
+  if (str.length === 0) {
+    console.log('Um, That is not a string.')
+    numResult.innerHTML = 'Um, that is not a string.'
+  }
+  else {
+    while (match = regex.exec(str)) {
+      console.log(match[0]);
+      let stringNum = parseInt(match)
+      numArray.push(' ' + match[0] + ' (type: ' + typeof (stringNum) + ')')
+      numResult.innerHTML = "I've pulled and converted the following numbers from your string: " + numArray
+      console.log(typeof (stringNum));
+    }
+  }
+}
 
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
@@ -29,22 +63,57 @@ const displayDate = () => {
   // * Number
   // * NaN
   // * String
-  
+  const displayType = () => {
+    let value = document.getElementById("checkType").value
+    let typeResult = document.getElementById('inputResult')
+
+    if (value === ""){
+      typeResult.innerHTML = 'What you entered is "Undefined".'
+    }
+    else if (value === "true" || value === "false" || value === "True" || value === "False"){
+      typeResult.innerHTML = 'What you entered is a "Boolean".'
+    }
+    else if (!Number.isNaN(Number(value))){
+      typeResult.innerHTML = 'What you entered is a "Number".'
+    }
+    else{
+      typeResult.innerHTML = 'What you entered is a "String"'
+    }
+  }
 
   
 // Write a JavaScript program that adds 2 numbers together.
-
+ const displaySum = () => {
+  let a = document.getElementById("num1").value
+  let b = document.getElementById("num2").value
+  let sum = Number(a) + Number(b)
+  let sumResult = document.getElementById("sumResult")
+  sumResult.innerHTML = sum
+ }
 
 
 // Write a JavaScript program that runs only when 2 things are true.
+const displayScore = () => {
+  let answerOne = document.getElementById("problem-one").value;
+  let answerTwo = document.getElementById("problem-two").value;
+  let testResult = document.getElementById("test-result");
+  let rightAnswer = document.getElementById("correct").value;
 
-
-
-// Write a JavaScript program that runs when 1 of 2 things are true.
-
-
-
-// Write a JavaScript program that runs when both things are not true.  
+  if (answerOne === rightAnswer && answerTwo === rightAnswer) {
+    console.log("Both are true");
+    testResult.innerHTML = "Both are correct!";
+  }
+  // Write a JavaScript program that runs when 1 of 2 things are true.
+  else if (answerOne !== answerTwo){
+    console.log("One is true");
+    testResult.innerHTML = "Only one is correct.";
+  }
+  // Write a JavaScript program that runs when both things are not true.  
+  else{
+    console.log('neither is true')
+    testResult.innerHTML = "Neither are correct."
+  }
+}
 
 // ***************************
 //         PART TWO

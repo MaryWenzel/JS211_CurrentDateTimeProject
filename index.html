@@ -1,15 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title></title>
-    <script src="main.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <hr/>
-    <div id="display-element"></div>
-    <button onclick="displayDate()">Click Me</button>
-    <hr/>
+    <div class="data-container">
+      <div class="date-box">
+        <h1>Let's play with Numbers!</h1>
+        <div id="display-element"></div>
+        <button onclick="displayDate()">Click Me</button>
+      </div>
+      <div class="convert-box1">
+        <p class="enter-num"> Enter Any Number</p>
+        <input class="num-input" type="number" id="numToString" >
+        <button class="num-btn" onclick="numToString()">Convert To String</button>
+        <p id="stringResult"></p>
+      </div>
+      <div class="convert-box2">
+        <p class="enter-num">Enter Any Number</p>
+        <input class="num-input" type="text" id="stringToNum">
+        <button class="num-btn" onclick="convertToNum()">Convert To Number</button>
+        <p id="numResult"></p>
+      </div>
+      <div class="input-box1">
+        <p>Let's Figure Out The Input</p>
+        <input class="boo-input" type="text" id="checkType" >
+        <button class="input-btn" onclick="displayType()">Check Input Type</button>
+        <p id="inputResult"></p>
+      </div>
+      <div class="input-box2">
+        <p class="sum-p">Find The Sum Of Two Numbers</p>
+        <input class="sum-input" type="number" id="num1">
+<br> 
+        <input class="sum-input" type="number" id="num2">
+        <button class="sum-btn" onclick='displaySum()'>ADD!</button>
+        <p id="sumResult"></p>
+      </div>
+      <div class="math-box">
+        <h3>Let's Do Some Math</h3>
+      </div>
+      <div class="problem-box1">
+        <p for="firstMathProblem">30 - 12 ÷ 3 x 2 =</p>
+        <select name="problem-one" id="problem-one">
+          <option value=""></option>
+          <option value="false">33</option>
+          <option value="correct" id="correct">22</option>
+          <option value="false">108</option>
+          <option value="false">5</option>
+        </select>
+      </div>  
+      <div class="problem-box2">
+        <p for="secondMathProblem">13 x 13 x 13 =</p>
+        <select name="problem-two" id="problem-two">
+          <option value=""></option>
+          <option value="false">800</option>
+          <option value="false">679</option>
+          <option value="false">3333</option>
+          <option value="correct" id="correct">2197</option>
+        </select>
+      </div>
+      <div class="btn-box">
+          <button class="check-score" onclick="displayScore()">Check Score</button>
+      </div>   
+      <div class="result-box">
+          <p id="test-result"></p>
+      </div> 
+    </div>
+   
+    <script src="main.js"></script>
   </body>
 </html>

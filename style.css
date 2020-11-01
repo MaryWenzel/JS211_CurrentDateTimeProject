@@ -1,0 +1,239 @@
+body {
+  background-image: url("./background.png");
+  margin: auto;
+}
+
+#display-element {
+  color: white;
+  font-size: 30px;
+}
+
+p {
+  text-shadow: 2px 2px 1px black;
+  color: white;
+  font-size: 25px;
+}
+/* 
+button {
+  border: solid 1.5px black;
+  box-shadow: 1px -0.5px 2px 5px #9c98cf;
+} */
+
+button {
+  border-color: #8e44ad;
+  border-radius: 0;
+  color: #4c3f88;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+}
+button:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: #4c3f88;
+  z-index: -1;
+  -webkit-transition: width 150ms ease-in-out;
+  transition: width 150ms ease-in-out;
+}
+button:hover {
+  color: #fff;
+}
+button:hover:after {
+  width: 110%;
+}
+
+h3 {
+  color: white;
+}
+
+.data-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1.2fr 0.8fr 1.4fr 0.9fr 0.9fr 0.6fr 1.1fr 1.1fr;
+  gap: 8px 8px;
+  grid-template-areas:
+    ". date-box date-box date-box date-box ."
+    ". convert-box1 convert-box1 convert-box2 convert-box2 ."
+    ". convert-box1 convert-box1 convert-box2 convert-box2 ."
+    ". input-box1 input-box1 input-box1 input-box1 ."
+    ". input-box2 input-box2 input-box2 input-box2 ."
+    ". . math-box math-box . ."
+    ". problem-box1 problem-box1 btn-box btn-box ."
+    ". problem-box2 problem-box2 result-box result-box .";
+}
+
+.date-box {
+  grid-area: date-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #20154db6;
+  border: solid 5px black;
+}
+
+/* Lets play with numbers! */
+.date-box h1 {
+  text-shadow: 3px 3px 2px black;
+  color: white;
+  font-size: 35px;
+}
+
+.date-box button {
+  width: 150px;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.convert-box1 {
+  grid-area: convert-box1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.convert-box2 {
+  grid-area: convert-box2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Enter number text */
+.enter-num {
+  margin-bottom: 20px;
+}
+
+.num-input {
+  align-self: center;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+}
+
+.num-btn {
+  font-size: 18px;
+  margin-top: 20px;
+  width: 150px;
+  align-self: center;
+  width: 205px;
+  height: 45px;
+  font-weight: 550;
+  letter-spacing: 1px;
+}
+
+.input-box1 {
+  grid-area: input-box1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 7px;
+}
+
+.boo-input,
+.sum-input {
+  width: 120px;
+  height: 35px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.boo-input {
+  margin-left: 4em;
+}
+
+.input-btn {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.input-box2 {
+  grid-area: input-box2;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 7px;
+}
+
+.sum-p {
+  padding-right: 42px;
+}
+
+.sum-btn,
+.input-btn {
+  height: 40px;
+  font-weight: 600;
+}
+
+/* Lets do some math */
+h3 {
+  font-size: 25px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.math-box {
+  grid-area: math-box;
+  text-align: center;
+}
+.problem-box1 {
+  grid-area: problem-box1;
+  display: flex;
+  justify-content: center;
+}
+.problem-box2 {
+  grid-area: problem-box2;
+  display: flex;
+  justify-content: center;
+}
+.btn-box {
+  grid-area: btn-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-score {
+  height: 60px;
+  width: 180px;
+  font-size: 20px;
+}
+
+.result-box {
+  grid-area: result-box;
+  display: flex;
+  justify-content: center;
+}
+
+.result-box > p {
+  font-size: 28px;
+}
+
+.date-box,
+.convert-box1,
+.convert-box2,
+.input-box1,
+.input-box2,
+.math-box,
+.problem-box1,
+.problem-box2,
+.btn-box,
+.result-box {
+  background-color: #20154db6;
+  border: solid 5px black;
+}
