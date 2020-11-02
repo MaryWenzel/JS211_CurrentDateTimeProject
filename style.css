@@ -228,6 +228,19 @@ h3 {
   font-size: 28px;
 }
 
+#problem-one,
+#problem-two {
+  height: 40px;
+  width: 50px;
+}
+
+.problem-box1,
+.problem-box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .date-box,
 .convert-box1,
 .convert-box2,
